@@ -1,0 +1,31 @@
+my notes on this prject:
+----------------------------------------
+
+// note: make your code compatible with laravel 5. for this check laravel 5.2 documentation
+
+----------------------------------------------
+
+// things to do tomorrow:
+
+design the resources and breadcrumbs of the routes
+create migration and table for messages
+design the basic layout of the services view
+
+create migration and table for services
+
+--------------------
+
+things i added:
+
+help:   () = "Added"
+        [] = "Modified"
+
+/ => (notes.txt)
+
+views => backend => (services folder)
+
+routes => backend => (services.php)
+
+routes => backend => (contacts.php)
+
+views => backend => includes => [sidebar.blade.php]

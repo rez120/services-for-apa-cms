@@ -96,6 +96,47 @@
                 </ul>
             </li>
         @endif
+
+
+        <li class="c-sidebar-nav-dropdown">
+            <x-utils.link
+                href="#"
+                icon="c-sidebar-nav-icon cil-list"
+                class="c-sidebar-nav-dropdown-toggle"
+                :text="__('Services')" />
+
+            <ul class="c-sidebar-nav-dropdown-items">
+                <li class="c-sidebar-nav-item">
+                    <x-utils.link
+                        :href="route('log-viewer::dashboard')"
+                        class="c-sidebar-nav-link"
+                        :text="__('View')" />
+                </li>
+                <li class="c-sidebar-nav-item">
+                    <x-utils.link
+                        :href="route('log-viewer::logs.list')"
+                        class="c-sidebar-nav-link"
+                        :text="__('Create')" />
+                </li>
+            </ul>
+        </li>
+
+
+        <li class="c-sidebar-nav-dropdown">
+            <x-utils.link
+                href="#"
+                icon="c-sidebar-nav-icon cil-list"
+                class="c-sidebar-nav-link"
+                :text="__('Contacts')" />
+
+       
+        </li>
+
+
+ 
+
+
+     
     </ul>
 
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
