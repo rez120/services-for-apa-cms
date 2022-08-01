@@ -101,7 +101,7 @@
         <li class="c-sidebar-nav-dropdown">
             <x-utils.link
                 href="#"
-                icon="c-sidebar-nav-icon cil-list"
+                icon="c-sidebar-nav-icon cil-library"
                 class="c-sidebar-nav-dropdown-toggle"
                 :text="__('Services')" />
 
@@ -121,22 +121,15 @@
             </ul>
         </li>
 
-
         <li class="c-sidebar-nav-dropdown">
             <x-utils.link
                 href="#"
-                icon="c-sidebar-nav-icon cil-list"
+                icon="c-sidebar-nav-icon cil-comment-bubble"
                 class="c-sidebar-nav-link"
                 :text="__('Contacts')" />
-
-       
         </li>
 
 
- 
-
-
-     
     </ul>
 
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
