@@ -13,6 +13,11 @@ design the basic layout of the services view
 
 create migration and table for services
 
+
+day 2:
+
+delete unused resource routes for services both in routes and controllers
+
 --------------------
 
 things i added:
@@ -29,3 +34,10 @@ routes => backend => (services.php)
 routes => backend => (contacts.php)
 
 views => backend => includes => [sidebar.blade.php]
+
+Models => (backend) => (service.php)
+
+database => migrations => (create_services_table.php)
+
+controllers => backend => (serviceController.php)
+

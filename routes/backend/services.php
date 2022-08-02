@@ -5,7 +5,7 @@ use Tabuna\Breadcrumbs\Trail;
 
 
 
-Route::get('services', fn()=> view('backend.services.index'))
+Route::get('service',  'backend/PhotoController')
     ->name('services')
     ->breadcrumbs(function (Trail $trail) {
         $trail->push(__('Services'), route('admin.services'));
