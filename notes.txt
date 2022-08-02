@@ -18,6 +18,28 @@ day 2:
 
 delete unused resource routes for services both in routes and controllers
 
+create boilerplate 5 project
+get their php ver
+get their laravel version
+
+let's forget about breadcrumbs for now 
+and focus on something else
+
+final:
+
+resolve all warnings, downgrade to laravel 5.2
+
+
+
+creational notes:
+
+they dont have breadcrumbs
+they need new wysiwig
+
+
+
+
+
 --------------------
 
 things i added:
@@ -40,4 +62,7 @@ Models => (backend) => (service.php)
 database => migrations => (create_services_table.php)
 
 controllers => backend => (serviceController.php)
+
+providers => (breadcrumbsServiceProviver.php)
+
 

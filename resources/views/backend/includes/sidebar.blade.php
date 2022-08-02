@@ -108,7 +108,7 @@
             <ul class="c-sidebar-nav-dropdown-items">
                 <li class="c-sidebar-nav-item">
                     <x-utils.link
-                        :href="route('log-viewer::dashboard')"
+                        :href="route('admin.service.index')"
                         class="c-sidebar-nav-link"
                         :text="__('View')" />
                 </li>
@@ -123,7 +123,7 @@
 
         <li class="c-sidebar-nav-dropdown">
             <x-utils.link
-                href="#"
+                :href="route('admin.contacts')"
                 icon="c-sidebar-nav-icon cil-comment-bubble"
                 class="c-sidebar-nav-link"
                 :text="__('Contacts')" />
