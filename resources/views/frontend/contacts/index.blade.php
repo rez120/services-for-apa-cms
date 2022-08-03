@@ -8,12 +8,12 @@
 </head>
 <body>
 
-    <form action={{route('')}} method="POST">
+    <form style="display:flex;flex-direction:column;" action="" method="POST">
         @csrf
-        <input name="title" type="text">
-        <input name="email" type="email">
-        <input name="name" type="text">
-        <textarea name="body" id="" cols="30" rows="10"></textarea>
+        <input name="title" placeholder="title" type="text">
+        <input name="email" placeholder="email" type="email">
+        <input name="name" placeholder="name" type="text">
+        <textarea name="body" id="" cols="30" rows="10" placeholder="message"></textarea>
         <button>submit</button>
     </form>
     
