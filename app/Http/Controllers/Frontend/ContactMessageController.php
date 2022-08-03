@@ -7,5 +7,10 @@ use Illuminate\Http\Request;
 
 class ContactMessageController extends Controller
 {
-    //
+    
+    
+    public function contactUs(){
+
+        return 'aaaaaaaaaa';
+    }
 }

@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\Frontend\ServiceController;
-
+use App\Http\Controllers\Frontend\ContactMessageController;
 /*
  * Global Routes
  *
@@ -32,3 +32,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
 
 // redo it for laravel 5.2
 Route::get('services', [ServiceController::class,'index']);
+
+
+Route::get('contactus', [ContactMessageController::class, 'contactUs']);
