@@ -35,3 +35,6 @@ Route::get('services', [ServiceController::class,'index']);
 
 
 Route::get('contactus', [ContactMessageController::class, 'contactUs']);
+
+
+Route::POST('contactus', [ContactMessageController::class, 'store'])->name('contactMessage.store');

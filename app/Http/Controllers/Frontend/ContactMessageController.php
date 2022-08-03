@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\contactMessage;
 use Illuminate\Http\Request;
 
 class ContactMessageController extends Controller
 {
-    
-    
     public function contactUs(){
 
         return view('frontend.contacts.index');
@@ -34,17 +33,10 @@ class ContactMessageController extends Controller
 
         $contactMessage -> save();
 
-        return redirect()->route('admin.service.create')->with('success', 'successfully created a new service');
-        
+        return redirect()->back()->with('success', 'successfully created a new service');
 
-        // $validator = Validator::make($request->all(), [
-        //     'title' => 'required|max:255|unique:services',
-        //     'thumbnail'=> 'required',
-        //     'body' => 'required',
-        // ]);
+
+
 
     }
-
-
-    
 }

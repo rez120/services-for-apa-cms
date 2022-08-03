@@ -21,6 +21,7 @@ class CreateContactMessagesTable extends Migration
             $table->text('body');
             $table->timestamps();
         });
+
     }
 
     /**

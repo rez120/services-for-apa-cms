@@ -8,7 +8,17 @@
 </head>
 <body>
 
-    <form style="display:flex;flex-direction:column;" action="" method="POST">
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+    <form style="display:flex;flex-direction:column;" action={{route('contactMessage.store')}} method="POST">
         @csrf
         <input name="title" placeholder="title" type="text">
         <input name="email" placeholder="email" type="email">
@@ -16,6 +26,8 @@
         <textarea name="body" id="" cols="30" rows="10" placeholder="message"></textarea>
         <button>submit</button>
     </form>
+
+    
     
 </body>
 </html>
