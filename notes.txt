@@ -82,4 +82,10 @@ controllers => frontend => (ServiceController.php)
 
 views => frontend => (services) => (index.blade.php)
 
+models => (ContactMessages.php)
+
+migrations => (migrations_table.php)
+
+
+
 
