@@ -86,6 +86,6 @@ models => (ContactMessages.php)
 
 migrations => (migrations_table.php)
 
+views => frontend => (contacts directory)
 
-
-
+controllers => frontend => (ContactMessageController.php)
