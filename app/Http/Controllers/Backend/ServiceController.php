@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\Backend\Service;
 use Illuminate\Http\Request;
+
+
 
 class ServiceController extends Controller
 {
@@ -15,8 +18,11 @@ class ServiceController extends Controller
      */
     public function index()
     {
+
+        $services = Service::all();
         
-        return view('backend.services.index');
+        return view('backend.services.index', ['services'=>$services]);
+
     }
 
     /**
@@ -26,7 +32,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.services.create');
     }
 
     /**
@@ -37,7 +43,29 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->validate($request, [
+            'title' => 'required|max:255|unique:services',
+            'thumbnail'=> 'required',
+            'body' => 'required',
+        ]);
+
+        $service = new Service;
+        $service->title = $request->title ;
+        $service->thumbnail = $request->thumbnail ;
+        $service->body = $request->body;
+
+
+        $service -> save();
+
+        return redirect()->route('admin.service.create')->with('success', 'successfully created a new service');
+        
+
+        // $validator = Validator::make($request->all(), [
+        //     'title' => 'required|max:255|unique:services',
+        //     'thumbnail'=> 'required',
+        //     'body' => 'required',
+        // ]);
+
     }
 
     /**
@@ -57,9 +85,10 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Service $service)
     {
-        //
+        
+      return view('backend.services.edit', ['service'=> $service]);
     }
 
     /**
@@ -69,9 +98,22 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Service $service)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|max:255|unique:services',
+            'thumbnail'=> 'required',
+            'body' => 'required',
+        ]);
+
+        $service->title = $request->title;
+        $service->thumbnail = $request->thumbnail;
+        $service->body = $request->body;
+        $service->save();
+
+        return redirect()->route('admin.service.index')->with('success', 'successfully created a new service');
+
+
     }
 
     /**
@@ -80,8 +122,8 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Service $service)
     {
-        //
+        
     }
 }

@@ -17,12 +17,13 @@
         <h1>error</h1>
 
 
-        <form style="background-color:white; display:flex; flex-direction: column;" action={{route('admin.service.store')}} method="POST">
+        <form style="background-color:white; display:flex; flex-direction: column;" action={{route('admin.service.update',['service' => $service->id] )}} method="POST">
             @csrf
+            @method('PATCH')
             {{-- @method('PUT') --}}
-            <input name="title" type="text" placeholder="title">
-            <input name="thumbnail" type="text"  >
-            <textarea name="body" id="" cols="30" rows="10" placeholder="descryption"></textarea>
+            <input name="title" type="text" placeholder="title"  value={{$service->title}}>
+            <input name="thumbnail" type="text" value={{$service->thumbnail}}  >
+            <textarea name="body" id="" cols="30" rows="10" placeholder="description">{{$service->body}}</textarea>
             <button>submit</button>
         </form>
 
@@ -42,9 +43,14 @@
     </div>
 @endif
 
+
+@php 
+
+    var_dump($service->title);
+
+@endphp
+
 @endsection
-
-
 
 
 

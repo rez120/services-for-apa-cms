@@ -3,13 +3,36 @@
 @section('title', __('Services'))
 
 @section('content')
-    <x-backend.card>
-        <x-slot name="header">
-            @lang('Welcome :Name', ['name' => $logged_in_user->name])
-        </x-slot>
+ 
+    <div style="width: 80%; min-height:200px; background-color:white;">
+        <table>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Thumbnail</th>
+              <th>Body</th>
+              <th>actions</th>
+            </tr>
 
-        <x-slot name="body">
-            @lang('Welcome to the Dashboard')
-        </x-slot>
-    </x-backend.card>
+                
+            @foreach ($services as $service) 
+
+                <tr>
+                    <td>{{$service->id}} </td>
+                    <td>{{$service->title}} </td>
+                    <td>{{$service->thumbnail}}</td>
+                    <td>{{$service->body}}</td>
+                   
+                </tr>
+                
+
+            
+            @endforeach
+
+          </table>
+        
+    </div>
+    
+ 
 @endsection
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <table
+            class="table table-striped table-bordered table-hover"
+            style="direction: rtl"
+        >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th class="visible-lg">Created at</th>
+                    <th>Visibility</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>43</td>
+                    <td>ماهنامه آبان ماه</td>
+                    <td>2018-11-27 07:30:16</td>
+                    <td>1</td>
+                    <td>
+                        <a
+                            href="http://cert.uma.ac.ir/panel/article/43/edit"
+                            class="btn btn-xs btn-primary"
+                            ><i
+                                class="fa fa-pencil"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title=""
+                                data-original-title="Edit"
+                            ></i
+                        ></a>
+                        <a
+                            href="http://cert.uma.ac.ir/panel/article/43/hide/0"
+                            class="btn btn-xs btn-warning"
+                            ><i
+                                class="fa fa-pause"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title=""
+                                data-original-title="Deactivate"
+                            ></i
+                        ></a>
+                        <a
+                            data-method="delete"
+                            data-trans-button-cancel="Cancel"
+                            data-trans-button-confirm="Delete"
+                            data-trans-title="Are you sure?"
+                            class="btn btn-xs btn-danger"
+                            style="cursor: pointer"
+                            onclick='$(this).find("form").submit();'
+                            ><i
+                                class="fa fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title=""
+                                data-original-title="Delete"
+                            ></i>
+                            <form
+                                action="http://cert.uma.ac.ir/panel/article/43"
+                                method="POST"
+                                name="delete_item"
+                                style="display: none"
+                            >
+                                <input
+                                    type="hidden"
+                                    name="_method"
+                                    value="delete"
+                                />
+                                <input
+                                    type="hidden"
+                                    name="_token"
+                                    value="UhnV9n8aFE8pyS6Z3MXtj8xCklPYfW3zf2jtnvlH"
+                                />
+                            </form>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>42</td>
+                    <td>ماهنامه مهرماه</td>
+                    <td>2018-11-27 07:16:06</td>
+                    <td>1</td>
+                    <td>
+                        <a
+                            href="http://cert.uma.ac.ir/panel/article/42/edit"
+                            class="btn btn-xs btn-primary"
+                            ><i
+                                class="fa fa-pencil"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title=""
+                                data-original-title="Edit"
+                            ></i
+                        ></a>
+                        <a
+                            href="http://cert.uma.ac.ir/panel/article/42/hide/0"
+                            class="btn btn-xs btn-warning"
+                            ><i
+                                class="fa fa-pause"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title=""
+                                data-original-title="Deactivate"
+                            ></i
+                        ></a>
+                        <a
+                            data-method="delete"
+                            data-trans-button-cancel="Cancel"
+                            data-trans-button-confirm="Delete"
+                            data-trans-title="Are you sure?"
+                            class="btn btn-xs btn-danger"
+                            style="cursor: pointer"
+                            onclick='$(this).find("form").submit();'
+                            ><i
+                                class="fa fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title=""
+                                data-original-title="Delete"
+                            ></i>
+                            <form
+                                action="http://cert.uma.ac.ir/panel/article/42"
+                                method="POST"
+                                name="delete_item"
+                                style="display: none"
+                            >
+                                <input
+                                    type="hidden"
+                                    name="_method"
+                                    value="delete"
+                                />
+                                <input
+                                    type="hidden"
+                                    name="_token"
+                                    value="UhnV9n8aFE8pyS6Z3MXtj8xCklPYfW3zf2jtnvlH"
+                                />
+                            </form>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

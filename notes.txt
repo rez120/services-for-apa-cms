@@ -25,6 +25,12 @@ get their laravel version
 let's forget about breadcrumbs for now 
 and focus on something else
 
+also we need frontend view and controller for contacts
+
+what should i focus on?
+
+create_file of services sound good 
+
 final:
 
 resolve all warnings, downgrade to laravel 5.2
@@ -35,8 +41,9 @@ creational notes:
 
 they dont have breadcrumbs
 they need new wysiwig
+they have their own table template for data - use it
 
-
+they don't have a multilingual support
 
 
 
@@ -65,4 +72,7 @@ controllers => backend => (serviceController.php)
 
 providers => (breadcrumbsServiceProviver.php)
 
+views => (contacts)
+
+/ => (front)
 

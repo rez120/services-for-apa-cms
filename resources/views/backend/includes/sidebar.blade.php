@@ -114,7 +114,7 @@
                 </li>
                 <li class="c-sidebar-nav-item">
                     <x-utils.link
-                        :href="route('log-viewer::logs.list')"
+                        :href="route('admin.service.create')"
                         class="c-sidebar-nav-link"
                         :text="__('Create')" />
                 </li>
