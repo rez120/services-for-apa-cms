@@ -9,6 +9,14 @@
 <body>
 
     <h1>services</h1>
-    
+
+ 
+
+        @foreach ($services as $service) 
+            
+            <h2>{{$service->title}} </h2>
+        
+        @endforeach
+         
 </body>
 </html>
