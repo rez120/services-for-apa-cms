@@ -31,6 +31,13 @@ what should i focus on?
 
 create_file of services sound good 
 
+
+
+day 3:
+
+create contacts backend controller and views.
+
+
 final:
 
 resolve all warnings, downgrade to laravel 5.2

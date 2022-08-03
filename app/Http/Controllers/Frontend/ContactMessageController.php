@@ -33,7 +33,7 @@ class ContactMessageController extends Controller
 
         $contactMessage -> save();
 
-        return redirect()->back()->with('success', 'successfully created a new service');
+        return redirect()->back()->with('success', 'successfully created a new service zzzzzzzzzzzz');
 
 
 
