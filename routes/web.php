@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\Frontend\ServiceController;
 
 /*
  * Global Routes
@@ -26,3 +27,8 @@ Route::group(['as' => 'frontend.'], function () {
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], function () {
     includeRouteFiles(__DIR__.'/backend/');
 });
+
+
+
+// redo it for laravel 5.2
+Route::get('services', [ServiceController::class,'index']);

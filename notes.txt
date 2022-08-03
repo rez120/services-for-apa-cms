@@ -76,3 +76,10 @@ views => (contacts)
 
 / => (front)
 
+routes => [web.php]
+
+controllers => frontend => (ServiceController.php)
+
+views => frontend => (services) => (index.blade.php)
+
+

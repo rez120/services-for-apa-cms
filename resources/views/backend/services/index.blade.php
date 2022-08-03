@@ -22,11 +22,19 @@
                     <td>{{$service->title}} </td>
                     <td>{{$service->thumbnail}}</td>
                     <td>{{$service->body}}</td>
-                   
-                </tr>
-                
+                    <td> 
+                        
+                        <a href={{route('admin.service.edit', ['service'=>$service->id])}}>edit</a>
 
-            
+                        <form action={{route('admin.service.destroy', ['service'=>$service->id])}} method="POST">
+                            @csrf
+                            @method('delete')
+                            <button>delete</button>
+                        </form>
+
+                        
+                    </td>
+                </tr>
             @endforeach
 
           </table>
