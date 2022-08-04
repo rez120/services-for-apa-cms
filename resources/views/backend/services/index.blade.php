@@ -21,7 +21,7 @@
                     <td>{{$service->id}} </td>
                     <td>{{$service->title}} </td>
                     <td>{{$service->thumbnail}}</td>
-                    <td>{{$service->body}}</td>
+                    <td>{!!$service->body!!}</td>
                     <td> 
                         
                         <a href={{route('admin.service.edit', ['service'=>$service->id])}}>edit</a>

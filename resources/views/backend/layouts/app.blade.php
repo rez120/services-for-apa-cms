@@ -13,6 +13,9 @@
     <link href="{{ mix('css/backend.css') }}" rel="stylesheet">
     <livewire:styles />
     @stack('after-styles')
+
+    @yield('custom-head')
+
 </head>
 <body class="c-app">
     @include('backend.includes.sidebar')
@@ -41,7 +44,12 @@
     <script src="{{ mix('js/manifest.js') }}"></script>
     <script src="{{ mix('js/vendor.js') }}"></script>
     <script src="{{ mix('js/backend.js') }}"></script>
+
     <livewire:scripts />
     @stack('after-scripts')
+
+    @yield('custom-script')
+
+    
 </body>
 </html>
