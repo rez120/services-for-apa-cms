@@ -96,3 +96,5 @@ migrations => (migrations_table.php)
 views => frontend => (contacts directory)
 
 controllers => frontend => (ContactMessageController.php)
+
+controllers =>  backend => (ContactMessageController.php)

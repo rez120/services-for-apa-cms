@@ -1,12 +1,9 @@
 <?php
 
 use App\Http\Controllers\Backend\DashboardController;
-use Tabuna\Breadcrumbs\Trail;
+use App\Http\Controllers\Backend\ContactMessageController;
 
 
+Route::get('contacts', [ContactMessageController::class,'index'])->name('contact.index');
 
-Route::get('contacts', fn()=> view('backend.contacts.index'))
-    ->name('contacts')
-    ->breadcrumbs(function (Trail $trail) {
-        $trail->push(__('Contacts'), route('admin.contacts'));
-    });
+Route::delete('contacts/{contactMessage}', [ContactMessageController::class,'destroy'])->name('contact.destroy');

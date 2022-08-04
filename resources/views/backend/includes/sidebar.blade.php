@@ -123,7 +123,7 @@
 
         <li class="c-sidebar-nav-dropdown">
             <x-utils.link
-                :href="route('admin.contacts')"
+                :href="route('admin.contact.index')"
                 icon="c-sidebar-nav-icon cil-comment-bubble"
                 class="c-sidebar-nav-link"
                 :text="__('Contacts')" />

@@ -3,13 +3,40 @@
 @section('titlezz', __('Dashboard'))
 
 @section('content')
-    <x-backend.card>
-        <x-slot name="header">
-            @lang('Welcome :Name', ['name' => $logged_in_user->name])
-        </x-slot>
+<div style="width: 80%; min-height:200px; background-color:white;">
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>name</th>
+          <th>email</th>
+          <th>body</th>
+          <th>actions</th>
+        </tr>
 
-        <x-slot name="body">
-            @lang('Welcome to the Dashboard')
-        </x-slot>
-    </x-backend.card>
+            
+        @foreach ($contactMessages as $contactMessage) 
+
+            <tr>
+                <td>{{$contactMessage->id}} </td>
+                <td>{{$contactMessage->title}} </td>
+                <td>{{$contactMessage->name}}</td>
+                <td>{{$contactMessage->email}}</td>
+                <td>{{$contactMessage->body}}</td>
+                <td> 
+                    
+                    <form action={{route('admin.contact.destroy', ['contactMessage'=>$contactMessage->id])}} method="POST">
+                        @csrf
+                        @method('delete')
+                        <button>delete</button>
+                    </form>
+
+                    
+                </td>
+            </tr>
+        @endforeach
+
+      </table>
+    
+</div>
 @endsection
