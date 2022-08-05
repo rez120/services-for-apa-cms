@@ -17,15 +17,23 @@
         <h1>error</h1>
 
 
-        <form style="background-color:white; display:flex; flex-direction: column;" action={{route('admin.service.update',['service' => $service->id] )}} method="POST">
+        <form style="background-color:white; display:flex; flex-direction: column;" action={{route('admin.service.update', ['service'=> $service->id])}} method="POST">
             @csrf
-            @method('PATCH')
-            {{-- @method('PUT') --}}
-            <input name="title" type="text" placeholder="title"  value={{$service->title}}>
-            <input name="thumbnail" type="text" value={{$service->thumbnail}}  >
-            <textarea name="body" id="" cols="30" rows="10" placeholder="description">{{$service->body}}</textarea>
+            @method('put')
+            <input name="title" type="text" value={{$service->title}}>
+            <input name="thumbnail" type="text"  value={{$service->thumbnail}}>
+            {{-- <textarea name="body" id="" cols="30" rows="10" placeholder="descryption"></textarea> --}}
+            
+            <label >متن</label>
+            <input name="body" id="body" type="hidden"  >
+            <div  dir="ltr" class="standalone-container">
+                <div  id="snow-container"></div>
+            </div>
+
             <button>submit</button>
         </form>
+
+        <div id="data-holder">{!! $service->body!!}</div>
 
         @if (\Session::has('success'))
     <div class="alert alert-success">
@@ -43,15 +51,77 @@
     </div>
 @endif
 
-
-@php 
-
-    var_dump($service->title);
-
-@endphp
-
 @endsection
 
 
+@section('custom-head')
+
+<link rel="stylesheet" href="/quill/quill.snow.css" />
+
+<style>
+    .standalone-container {
+
+    }
+    #snow-container {
+        height: 350px;
+    }
+
+   
+</style>
 
 
+
+@endsection
+
+@section('custom-script')
+
+ start of custom script
+<script src="/quill/quill.min.js"></script>
+<script>
+    var toolbarOptions = [
+        [{ size: ["small", false, "large", "huge"] }],
+        [{ align: ['justify', 'center', false, 'right'] }],
+        [{ direction: "rtl" }],
+        ["bold", "italic", "underline", "strike"], // toggled buttons
+        ["blockquote", "code-block"],
+
+        [{ list: "ordered" }, { list: "bullet" }],
+        [{ script: "sub" }, { script: "super" }], // superscript/subscript
+        [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        // text direction
+
+        // custom dropdown
+
+        [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+
+        ["image"],
+    ];
+    var quill = new Quill("#snow-container", {
+        placeholder: "متن را وارد کنید",
+        theme: "snow",
+        modules: {
+            toolbar: toolbarOptions,
+        },
+    });
+</script>
+
+<script>
+    document.querySelector(".ql-editor").innerHTML = document.getElementById("body").value;
+</script>
+
+<script >
+
+document.querySelector(".ql-editor").innerHTML = document.getElementById("data-holder").innerHTML;
+    setInterval(function () {
+        document.getElementById("body").value = document.querySelector(".ql-editor").innerHTML;
+    }, 5);
+</script>
+
+
+<script>
+    document.getElementsByClassName('ql-direction')[0].click();
+</script>
+
+end of custom script
+@endsection

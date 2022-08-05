@@ -101,7 +101,7 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         $this->validate($request, [
-            'title' => 'required|max:255|unique:services',
+            'title' => 'required|max:255',
             'thumbnail'=> 'required',
             'body' => 'required',
         ]);
@@ -111,9 +111,9 @@ class ServiceController extends Controller
         $service->body = $request->body;
         $service->save();
 
-        return redirect()->route('admin.service.index')->with('success', 'successfully created a new service');
+        return redirect()->route('admin.service.index')->with('success', 'successfully updated service');
 
-
+        return $request;
     }
 
     /**

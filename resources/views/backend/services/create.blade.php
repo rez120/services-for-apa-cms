@@ -20,7 +20,7 @@
         <form style="background-color:white; display:flex; flex-direction: column;" action={{route('admin.service.store')}} method="POST">
             @csrf
             {{-- @method('PUT') --}}
-            <input name="title" type="text" placeholder="title">
+            <input name="title" type="text" placeholder="title" >
             <input name="thumbnail" type="text"  >
             {{-- <textarea name="body" id="" cols="30" rows="10" placeholder="descryption"></textarea> --}}
             
