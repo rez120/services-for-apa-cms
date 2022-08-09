@@ -17,8 +17,12 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('thumbnail');
+            $table->string('service_provider');
+            $table->boolean('visibility')->default(1);
             $table->text('body');
             $table->timestamps();
+            // soft delete
+            $table->softDeletes();
         });
     }
 

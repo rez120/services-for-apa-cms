@@ -32,6 +32,13 @@
                             <button>delete</button>
                         </form>
 
+
+                        <form action={{route('admin.service.visibility', ['service'=>$service->id])}} method="POST">
+                            @csrf
+                            @method('put')
+                            <button>hide</button>
+                        </form>
+
                         
                     </td>
                 </tr>

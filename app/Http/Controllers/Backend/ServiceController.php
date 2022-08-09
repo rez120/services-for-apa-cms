@@ -47,19 +47,21 @@ class ServiceController extends Controller
             'title' => 'required|max:255|unique:services',
             'thumbnail'=> 'required',
             'body' => 'required',
+            'service_provider' => 'required',
         ]);
 
         $service = new Service;
         $service->title = $request->title ;
         $service->thumbnail = $request->thumbnail ;
         $service->body = $request->body;
-
-
+        $service->service_provider = $request->service_provider;
         $service -> save();
 
-        return redirect()->route('admin.service.create')->with('success', 'successfully created a new service');
-        
+        // return redirect()->route('admin.service.create')->with('success', 'successfully created a new service');
+        return back()->with('success', 'successfully created a new service');
+        // return response()->json([
 
+      //  ]);
         // $validator = Validator::make($request->all(), [
         //     'title' => 'required|max:255|unique:services',
         //     'thumbnail'=> 'required',
@@ -110,11 +112,33 @@ class ServiceController extends Controller
         $service->thumbnail = $request->thumbnail;
         $service->body = $request->body;
         $service->save();
+        
 
         return redirect()->route('admin.service.index')->with('success', 'successfully updated service');
 
-        return $request;
+       
+        
     }
+
+
+    public function hide(Service $service){
+        
+        if($service->visibility == 1){
+            $service->visibility = 0;
+            $service->save();
+        }
+        elseif($service->visibility == 0){
+            $service->visibility = 1;
+            $service->save();
+        }
+
+
+        // return $service;
+
+        return redirect()->route('admin.service.index')->with('success', 'successfully changed visibility');
+        
+    }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -124,7 +148,6 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-
         $service->delete();
           
         return 'deleted successfully';

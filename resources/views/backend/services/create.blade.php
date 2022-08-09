@@ -21,7 +21,8 @@
             @csrf
             {{-- @method('PUT') --}}
             <input name="title" type="text" placeholder="title" >
-            <input name="thumbnail" type="text"  >
+            <input name="thumbnail" type="text"  placeholder="thumbnail" >
+            <input name="service_provider" type="text" placeholder="service provider"  >
             {{-- <textarea name="body" id="" cols="30" rows="10" placeholder="descryption"></textarea> --}}
             
             <label >متن</label>
