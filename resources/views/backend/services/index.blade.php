@@ -25,7 +25,7 @@
                     <td> 
                         
                         <a href={{route('admin.service.edit', ['service'=>$service->id])}}>edit</a>
-
+                        <a href={{route('admin.service.show', ['service'=>$service])}}>show</a>
                         <form action={{route('admin.service.destroy', ['service'=>$service->id])}} method="POST">
                             @csrf
                             @method('delete')
