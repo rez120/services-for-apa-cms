@@ -25,4 +25,11 @@ class ContactMessageController extends Controller
           
         return redirect()->back();
     }
+
+
+    public function show(ContactMessage $contactMessage)
+    {
+
+        return view('backend.contacts.show', ['contactMessage'=> $contactMessage]);
+    }
 }

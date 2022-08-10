@@ -24,6 +24,9 @@
                 <td>{{$contactMessage->email}}</td>
                 <td>{{$contactMessage->body}}</td>
                 <td> 
+
+
+                    <a href={{route('admin.contact.show', ['contactMessage'=> $contactMessage])}}>show</a>
                     
                     <form action={{route('admin.contact.destroy', ['contactMessage'=>$contactMessage->id])}} method="POST">
                         @csrf
