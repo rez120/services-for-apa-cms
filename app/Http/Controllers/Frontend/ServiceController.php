@@ -17,4 +17,10 @@ class ServiceController extends Controller
 
         return view('frontend.services.index',['services'=> $services] );
     }
+
+
+    public function serviceRequests()
+    {
+        return $this->hasMany(serviceRequest::class);
+    }
 }

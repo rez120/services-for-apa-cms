@@ -41,8 +41,15 @@
 
                         
                     </td>
+                    <td>
+                        {{$service->serviceRequests}}
+                        
+                    </td>
                 </tr>
             @endforeach
+
+
+         
 
           </table>
         

@@ -118,6 +118,12 @@
                         class="c-sidebar-nav-link"
                         :text="__('Create')" />
                 </li>
+                <li class="c-sidebar-nav-item">
+                    <x-utils.link
+                        :href="route('admin.service_request.index')"
+                        class="c-sidebar-nav-link"
+                        :text="__('Service Requests')" />
+                </li>
             </ul>
         </li>
 

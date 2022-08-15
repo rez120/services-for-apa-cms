@@ -3,6 +3,7 @@
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Frontend\ContactMessageController;
+use App\Http\Controllers\Frontend\ServiceRequestController;
 /*
  * Global Routes
  *
@@ -37,4 +38,9 @@ Route::get('services', [ServiceController::class,'index']);
 Route::get('contactus', [ContactMessageController::class, 'contactUs']);
 
 
-Route::POST('contactus', [ContactMessageController::class, 'store'])->name('contactMessage.store');
+Route::post('contactus', [ContactMessageController::class, 'store'])->name('contactMessage.store');
+
+
+Route::get("service_request/{service}", [ServiceRequestController::class, 'create'])->name("service_request.create");
+
+Route::post('service_request', [ServiceRequestController::class, 'store'])->name("service_request.store");

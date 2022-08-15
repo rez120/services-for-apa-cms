@@ -148,7 +148,14 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
+
+
+        foreach($service->serviceRequests as $serviceRequest){
+            $serviceRequest->delete();
+        }
         $service->delete();
+
+
           
         return 'deleted successfully';
     }

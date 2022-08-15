@@ -15,6 +15,8 @@
         @foreach ($services as $service) 
             
             <h2>{{$service->title}} </h2>
+            <a href={{route("service_request.create", ['service'=> $service])}}>add </a>
+           <br>
         
         @endforeach
          

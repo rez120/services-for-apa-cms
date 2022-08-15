@@ -98,3 +98,19 @@ views => frontend => (contacts directory)
 controllers => frontend => (ContactMessageController.php)
 
 controllers =>  backend => (ContactMessageController.php)
+
+controllers =>  backend => (ServiceRequestController.php)
+
+controllers =>  frontend => (ServiceRequestController.php)
+
+Models => (ServiceRequest.php)
+
+migrations => (service_requests.php)
+
+views => backend => (serviceRequests directory) 
+
+views => frontend => (serviceRequests directory)
+
+routes => backend => (serviceRequests.php)
+
+route => frontend => [web.php]
