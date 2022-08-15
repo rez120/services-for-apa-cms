@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class ContactMessageController extends Controller
 {
-    public function contactUs(){
+    public function create(){
 
-        return view('frontend.contacts.index');
+        return view('frontend.contactMessages.create');
     }
 
 
@@ -19,9 +19,9 @@ class ContactMessageController extends Controller
     {
          $this->validate($request, [
             'title' => 'required|max:255',
-            'email'=> 'required|email',
-            'name'=> 'required',
-            'body' => 'required'
+            'email'=> 'required|email|max:255',
+            'name'=> 'required|max:255',
+            'body' => 'required|max:5000'
         ]);
 
         $contactMessage = new ContactMessage;
@@ -33,7 +33,7 @@ class ContactMessageController extends Controller
 
         $contactMessage -> save();
 
-        return redirect()->back()->with('success', 'successfully created a new service zzzzzzzzzzzz');
+        return redirect()->route('contact_message.create')->with('successMessage', 'Successfully sent a message.');
 
 
 

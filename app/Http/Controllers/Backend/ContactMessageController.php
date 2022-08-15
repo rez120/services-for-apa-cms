@@ -18,18 +18,18 @@ class ContactMessageController extends Controller
 
 
 
-    public function destroy(ContactMessage $contactMessage)
+    public function destroy(ContactMessage $contact_message)
     {
 
-        $contactMessage->delete();
+        $contact_message->delete();
           
-        return redirect()->back();
+        return redirect()->route('admin.contact_message.index')->with('successMessage', 'Successfully soft deleted the contact message.');
     }
 
 
-    public function show(ContactMessage $contactMessage)
+    public function show(ContactMessage $contact_message)
     {
 
-        return view('backend.contacts.show', ['contactMessage'=> $contactMessage]);
+        return view('backend.contacts.show', ['contactMessage'=> $contact_message]);
     }
 }

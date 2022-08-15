@@ -18,21 +18,21 @@
     </div>
 @endif
 
-    <form style="display:flex;flex-direction:column;" action={{route('contactMessage.store')}} method="POST">
+    <form style="display:flex;flex-direction:column;" action={{route('contact_message.store')}} method="POST">
         @csrf
-        <input name="title" placeholder="title" type="text">
-        <input name="email" placeholder="email" type="email">
-        <input name="name" placeholder="name" type="text">
+        <input type="text"  name="title" placeholder="title" >
+        <input type="email" name="email" placeholder="email" >
+        <input type="text"  name="name"  placeholder="name" >
         <textarea name="body" id="" cols="30" rows="10" placeholder="message"></textarea>
         <button>submit</button>
     </form>
 
 
 
-    @if (\Session::has('success'))
+    @if (\Session::has('successMessage'))
     <div class="alert alert-success">
         <ul>
-            <li>{!! \Session::get('success') !!}</li>
+            <li>{!! \Session::get('successMessage') !!}</li>
         </ul>
     </div>
 @endif

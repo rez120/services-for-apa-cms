@@ -35,10 +35,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
 Route::get('services', [ServiceController::class,'index']);
 
 
-Route::get('contactus', [ContactMessageController::class, 'contactUs']);
+Route::get('contact_message', [ContactMessageController::class, 'create'])->name('contact_message.create');
 
 
-Route::post('contactus', [ContactMessageController::class, 'store'])->name('contactMessage.store');
+Route::post('contact_message', [ContactMessageController::class, 'store'])->name('contact_message.store');
 
 
 Route::get("service_request/{service}", [ServiceRequestController::class, 'create'])->name("service_request.create");

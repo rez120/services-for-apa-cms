@@ -3,6 +3,17 @@
 @section('titlezz', __('Dashboard'))
 
 @section('content')
+
+@if (count($errors) > 0)
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 <div style="width: 80%; min-height:200px; background-color:white;">
     <table>
         <tr>
@@ -26,9 +37,9 @@
                 <td> 
 
 
-                    <a href={{route('admin.contact.show', ['contactMessage'=> $contactMessage])}}>show</a>
+                    <a href={{route('admin.contact_message.show', ['contact_message'=> $contactMessage])}}>show</a>
                     
-                    <form action={{route('admin.contact.destroy', ['contactMessage'=>$contactMessage->id])}} method="POST">
+                    <form action={{route('admin.contact_message.destroy', ['contact_message'=>$contactMessage])}} method="POST">
                         @csrf
                         @method('delete')
                         <button>delete</button>
@@ -40,6 +51,14 @@
         @endforeach
 
       </table>
+
+      @if (\Session::has('successMessage'))
+    <div class="alert alert-success">
+        <ul>
+            <li>{!! \Session::get('successMessage') !!}</li>
+        </ul>
+    </div>
+@endif
     
 </div>
 @endsection

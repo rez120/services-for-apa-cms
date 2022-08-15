@@ -12,4 +12,4 @@ use App\Http\Controllers\Backend\ContactMessageController;
 // Route::get('show/{contactMessage}', [ContactMessageController::class,'show'])->name('contact.show');
 
 
-Route::resource('contact',ContactMessageController::class)->except(['edit', 'update','create', 'store' ]);
+Route::resource('contact_message',ContactMessageController::class)->except(['edit', 'update','create', 'store']);
