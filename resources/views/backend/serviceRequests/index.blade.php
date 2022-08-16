@@ -3,6 +3,16 @@
 @section('title', __('Services'))
 
 @section('content')
+
+@if (count($errors) > 0)
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
  
     <div style="width: 80%; min-height:200px; background-color:white;">
         <table>
@@ -44,6 +54,16 @@
           </table>
         
     </div>
+
+    @if (\Session::has('successMessage'))
+<div class="alert alert-success">
+    <ul>
+        <li>{!! \Session::get('successMessage') !!}</li>
+    </ul>
+</div>
+@endif
+
+
     
  
 @endsection

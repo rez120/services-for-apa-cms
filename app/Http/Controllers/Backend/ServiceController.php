@@ -44,7 +44,7 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
          $this->validate($request, [
-            'title' => 'required|max:255|unique:services',
+            'title' => 'required|max:255',
             'thumbnail'=> 'required|max:255',
             'body' => 'required|max:60000',
         ]);
