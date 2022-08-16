@@ -5,7 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ServiceRequest;
-use App\Models\Backend\Service;
+use App\Models\Service;
 class ServiceRequestController extends Controller
 {
     

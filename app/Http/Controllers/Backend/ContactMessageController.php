@@ -13,7 +13,7 @@ class ContactMessageController extends Controller
 
         $contactMessages = ContactMessage::all();
 
-        return view('backend.contacts.index', ['contactMessages'=> $contactMessages]);
+        return view('backend.contactMessages.index', ['contactMessages'=> $contactMessages]);
     }
 
 
@@ -30,6 +30,6 @@ class ContactMessageController extends Controller
     public function show(ContactMessage $contact_message)
     {
 
-        return view('backend.contacts.show', ['contactMessage'=> $contact_message]);
+        return view('backend.contactMessages.show', ['contactMessage'=> $contact_message]);
     }
 }

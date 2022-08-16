@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 
 use App\Http\Controllers\Controller;
-use App\Models\Backend\Service;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 
@@ -45,29 +45,17 @@ class ServiceController extends Controller
     {
          $this->validate($request, [
             'title' => 'required|max:255|unique:services',
-            'thumbnail'=> 'required',
-            'body' => 'required',
-            'service_provider' => 'required',
+            'thumbnail'=> 'required|max:255',
+            'body' => 'required|max:60000',
         ]);
 
         $service = new Service;
         $service->title = $request->title ;
         $service->thumbnail = $request->thumbnail ;
         $service->body = $request->body;
-        $service->service_provider = $request->service_provider;
         $service -> save();
 
-        // return redirect()->route('admin.service.create')->with('success', 'successfully created a new service');
-        return back()->with('success', 'successfully created a new service');
-        // return response()->json([
-
-      //  ]);
-        // $validator = Validator::make($request->all(), [
-        //     'title' => 'required|max:255|unique:services',
-        //     'thumbnail'=> 'required',
-        //     'body' => 'required',
-        // ]);
-
+        return redirect()->route('admin.service.index')->with('successMessage', 'The Service was successfully created.');
     }
 
     /**
@@ -104,8 +92,8 @@ class ServiceController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:255',
-            'thumbnail'=> 'required',
-            'body' => 'required',
+            'thumbnail'=> 'required|max:255',
+            'body' => 'required|max:60000',
         ]);
 
         $service->title = $request->title;
@@ -114,10 +102,8 @@ class ServiceController extends Controller
         $service->save();
         
 
-        return redirect()->route('admin.service.index')->with('success', 'successfully updated service');
+        return redirect()->route('admin.service.index')->with('successMessage', 'The Service was successfully edited.');
 
-       
-        
     }
 
 
@@ -135,7 +121,7 @@ class ServiceController extends Controller
 
         // return $service;
 
-        return redirect()->route('admin.service.index')->with('success', 'successfully changed visibility');
+        return redirect()->route('admin.service.index')->with('successMessage', 'The Service was successfully hidden/unhidden.');
         
     }
     
@@ -157,6 +143,6 @@ class ServiceController extends Controller
 
 
           
-        return 'deleted successfully';
+        return redirect()->route('admin.service.index')->with('successMessage', "The Service and it's requests was successfully deleted.");
     }
 }

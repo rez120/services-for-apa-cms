@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use App\Models\Service;
 class ServiceRequest extends Model
 {
     use HasFactory;
@@ -15,7 +15,7 @@ class ServiceRequest extends Model
     protected $dates = ['deleted_at'];
     public function Service()
     {
-        return $this->belongsTo(Backend\Service::class);
+        return $this->belongsTo(Service::class);
     }
 
 }

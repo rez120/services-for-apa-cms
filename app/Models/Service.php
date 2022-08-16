@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Backend;
+namespace App\Models;
 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -18,7 +18,7 @@ class Service extends Model
     // for soft delete , experimental
     // use SoftDelete;
 
-    protected $fillable = ['title', 'thumbnail', 'body', 'service_provider', 'visibility'];
+    protected $fillable = ['title', 'thumbnail', 'body', 'visibility'];
 
     protected $dates = ['deleted_at'];
 
@@ -26,4 +26,6 @@ class Service extends Model
     {
         return $this->hasMany(serviceRequest::class);
     }
+
+    
 }
