@@ -8,6 +8,8 @@
 </head>
 <body>
 
+
+
     @if (count($errors) > 0)
     <div class="alert alert-danger">
         <ul>
@@ -20,14 +22,27 @@
 
     <h1>service requests</h1>
 
+    @php
+
+            $model = App\Models\Service::find($service_id) ;
+            
+        
+    @endphp
+
+    {{$model}}
+
+   
+
     <form action={{route("service_request.store")}} method="POST" style = "display:flex;flex-direction:column;">
         @csrf
         <input type="text" name="name" placeholder="name">
         <input type="text" name="email" placeholder="email">
         <input type="text" name="phone_number" placeholder="phone number">
         <input type="text" name="organization_name" placeholder="organization name">
-        <input type="hidden" value={{$service->id}} name="service_id">
+        <input type="hidden" value={{$service_id}}  name="service_id">
         <button>send</button>
+      
+        id:  {{$service_id}}
     </form>
 
 

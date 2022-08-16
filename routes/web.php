@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
 
 
 // redo it for laravel 5.2
-Route::get('services', [ServiceController::class,'index']);
+Route::get('services', [ServiceController::class,'index'])->name('service.index');
 
 
 Route::get('contact_message', [ContactMessageController::class, 'create'])->name('contact_message.create');
@@ -41,6 +41,6 @@ Route::get('contact_message', [ContactMessageController::class, 'create'])->name
 Route::post('contact_message', [ContactMessageController::class, 'store'])->name('contact_message.store');
 
 
-Route::get("service_request/{service}", [ServiceRequestController::class, 'create'])->name("service_request.create");
+Route::get("service_request/{service_id}", [ServiceRequestController::class, 'create'])->name("service_request.create");
 
 Route::post('service_request', [ServiceRequestController::class, 'store'])->name("service_request.store");

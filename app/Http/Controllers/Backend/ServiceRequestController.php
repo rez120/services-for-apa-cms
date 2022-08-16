@@ -26,6 +26,6 @@ class ServiceRequestController extends Controller
 
         $serviceRequest->delete();
 
-        return "delete successful";
+        return redirect()->route('admin.serviceRequests.index')->with('successMessage', "The Service request was successfully deleted.");
     }
 }
