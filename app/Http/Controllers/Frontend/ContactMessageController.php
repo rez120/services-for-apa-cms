@@ -33,7 +33,7 @@ class ContactMessageController extends Controller
 
         $contactMessage -> save();
 
-        return redirect()->route('contact_message.create')->with('successMessage', 'Successfully sent a message.');
+        return redirect()->route('contact_message.create')->with('successMessage', 'The message was successfully sent.');
 
 
 
